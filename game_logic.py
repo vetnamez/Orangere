@@ -11,15 +11,15 @@ class FlowerSort:
 
 # Предопределённые сорта
 SORTS = {
-    "Красный": FlowerSort("Красный", 0, 10, 20, 15),
-    "Синий": FlowerSort("Синий", 100, 30, 70, 30),
-    "Золотой": FlowerSort("Золотой", 250, 50, 150, 45)
+    "Аресис": FlowerSort("Аресис", 0, 10, 20, 15),
+    "Элизиум": FlowerSort("Элизиум", 100, 30, 70, 30),
+    "Тарсикс": FlowerSort("Тарсикс", 250, 50, 150, 45)
 }
 
 class Farm:
     def __init__(self):
         self.scores = 100
-        self.purchased_sorts = ["Красный"]
+        self.purchased_sorts = ["Аресис"]
         self.plots = [[{'state': 'empty', 'sort_name': None, 'plant_time': None} for _ in range(4)] for _ in range(4)]
         self.income_history = []  # максимум 20 элементов
 

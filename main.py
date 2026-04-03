@@ -64,7 +64,7 @@ class Game:
         self.running = True
         self.farm = None
         self.load_or_new_game()
-        self.active_sort = "Красный"  # выбранный сорт для посадки
+        self.active_sort = "Аресис"  # выбранный сорт для посадки
         self.message = None
         self.message_end_time = 0
         self.last_save_time = pygame.time.get_ticks()
@@ -152,7 +152,7 @@ class Game:
         title = font_medium.render("Биохакинг:", True, BLACK)
         self.screen.blit(title, (panel_x, panel_y))
         y_offset = panel_y + 40
-        for sort_name in ["Синий", "Золотой"]:
+        for sort_name in ["Элизиум", "Тарсикс"]:
             sort = SORTS[sort_name]
             purchased = sort_name in self.farm.purchased_sorts
             if purchased:
@@ -229,7 +229,7 @@ class Game:
         # Правая панель - покупка сортов
         right_x = WIDTH - 150
         right_y = 120
-        for i, sort_name in enumerate(["Синий", "Золотой"]):
+        for i, sort_name in enumerate(["Элизиум", "Тарсикс"]):
             btn_rect = pygame.Rect(right_x, right_y + i*50, 140, 40)
             if btn_rect.collidepoint(x, y):
                 if sort_name not in self.farm.purchased_sorts:
@@ -273,7 +273,7 @@ class Game:
                     mx, my = ev.pos
                     if yes_rect.collidepoint(mx, my):
                         self.farm.reset_game()
-                        self.active_sort = "Красный"
+                        self.active_sort = "Аресис"
                         self.show_message("Игра сброшена", 1000)
                         waiting = False
                     elif no_rect.collidepoint(mx, my):
